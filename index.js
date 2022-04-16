@@ -4,9 +4,12 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 //Import Route
 const authRoute = require('./routes/auth');
-const postRoute = require('./routes/posts')
+const postRoute = require('./routes/posts');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-
+app.use(cors());
+app.use(bodyParser.json());
 dotenv.config();
 
 //Connect to Db
